@@ -18,6 +18,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
         public bool Durum { get; set; }
 
-        public ICollection<Personel> Personels { get; set; }
+        public virtual ICollection<Personel> Personels { get; set; }
     }
 }

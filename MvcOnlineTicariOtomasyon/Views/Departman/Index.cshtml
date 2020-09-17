@@ -1,7 +1,7 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
 @model List<Departman>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Departman Listesi";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -25,7 +25,7 @@
                             <td class="text-center">@item.DepartmanID</td>
                             <td>@item.DepartmanAd</td>
                             <td class="text-center">
-                                <a href="/Departman/Show/@item.DepartmanID" class="btn btn-info btn-sm">Detaylar</a>
+                                <a href="/Departman/Details/@item.DepartmanID" class="btn btn-info btn-sm">Detaylar</a>
                                 <a href="/Departman/Edit/@item.DepartmanID" class="btn btn-primary btn-sm">Düzenle</a>
                                 <a href="/Departman/Delete/@item.DepartmanID" class="btn btn-danger btn-sm">Sil</a>
                             </td>

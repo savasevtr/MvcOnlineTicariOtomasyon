@@ -11,6 +11,7 @@
 
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
+                @*<caption>@ViewBag.DepartmentName</caption>*@
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 5%">ID</th>
@@ -29,7 +30,7 @@
                             <td>@item.PersonelSoyad</td>
                             <td>@item.PersonelGorsel</td>
                             <td class="text-center">
-                                <a href="/Personel/Sales/@item.PersonelID">Satışlar</a>
+                                <a href="/Personel/Sales/@item.PersonelID" class="btn btn-outline-dark btn-sm">Satışlar</a>
                             </td>
                         </tr>
                     }

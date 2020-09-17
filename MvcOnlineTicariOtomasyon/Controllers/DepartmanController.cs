@@ -67,6 +67,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var departman = context.Departmans.Find(id);
 
+            //var personeller = context.Personels.Where(x => x.DepartmanID == id).ToList();
+            //var DepartmentName = context.Departmans.Where(x => x.DepartmanID == id).Select(y => y.DepartmanAd).FirstOrDefault();
+            //ViewBag.DepartmentName = DepartmentName;
+
             return View(departman);
         }
     }
