@@ -1,0 +1,25 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Kategori
+@{
+    ViewBag.Title = "Yeni Kategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row my-4">
+    <div class="col-md-12">
+
+        <a href="/Kategori/Index" class="btn btn-success float-left mb-3">Kategori Listesi</a>
+
+        <br /><br /><br />
+
+        <form action="/Kategori/Create" method="post">
+            
+            <div class="form-group">
+                @Html.LabelFor(x => x.KategoriAd, new { @class = "mb-1" })
+                @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+            </div>
+           
+            <button type="submit" class="btn btn-success my-2">Kaydet</button>
+        </form>
+
+    </div>
+</div>
