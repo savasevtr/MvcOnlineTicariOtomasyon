@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Web;
 using System.Web.Mvc;
 
@@ -27,6 +28,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult Create(Cari cari)
         {
+            cari.Durum = true;
             context.Caris.Add(cari);
             context.SaveChanges();
 
@@ -46,10 +48,16 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var _cari = context.Caris.Find(cari.CariID);
 
+            if (!ModelState.IsValid)
+            {
+                return View(_cari);
+            }
+
             _cari.CariAd = cari.CariAd;
             _cari.CariSoyad = cari.CariSoyad;
             _cari.CariMail = cari.CariMail;
             _cari.CariSehir = cari.CariSehir;
+            // _cari.Durum = cari.Durum;
 
             context.SaveChanges();
 
@@ -59,11 +67,21 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Delete(int id)
         {
             var cari = context.Caris.Find(id);
-
-            context.Caris.Remove(cari);
+            cari.Durum = false;
+            
             context.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            var satislar = context.SatisHarekets.Where(x => x.CariID == id).ToList();
+            var cari = context.Caris.Where(x => x.CariID == id).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+
+            ViewBag.cari = cari;
+
+            return View(satislar);
         }
     }
 }
