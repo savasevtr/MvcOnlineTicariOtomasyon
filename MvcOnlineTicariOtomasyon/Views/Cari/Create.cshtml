@@ -1,0 +1,41 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cari
+@{
+    ViewBag.Title = "Yeni Cari Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row my-4">
+    <div class="col-md-12">
+
+        <a href="/Cari/Index" class="btn btn-success float-left mb-3">Cariler</a>
+
+        <br /><br /><br />
+
+        <form action="/Cari/Create" method="post">
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.CariAd, new { @class = "mb-1" })
+                @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.CariSoyad, new { @class = "mb-1" })
+                @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.CariMail, new { @class = "mb-1" })
+                @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.CariSehir, new { @class = "mb-1" })
+                @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+            </div>
+
+            <button type="submit" class="btn btn-success my-2">Kaydet</button>
+        </form>
+
+    </div>
+</div>
+
