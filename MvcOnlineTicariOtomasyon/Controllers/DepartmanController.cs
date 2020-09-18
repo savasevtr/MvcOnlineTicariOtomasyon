@@ -73,5 +73,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
             return View(departman);
         }
+
+        public ActionResult PersonelSales(int id)
+        {
+            var satislar = context.SatisHarekets.Where(x => x.PersonelID == id).ToList();
+            var personel = context.Personels.Where(x => x.PersonelID == id).Select(y => y.PersonelAd + " " + y.PersonelSoyad).FirstOrDefault();
+
+            return View(satislar);
+        }
     }
 }

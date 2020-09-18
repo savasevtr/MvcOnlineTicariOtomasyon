@@ -15,6 +15,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string UrunAd { get; set; }
+
         public string Marka { get; set; }
         public short Stok { get; set; }
         public decimal AlisFiyat { get; set; }
@@ -24,6 +25,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string UrunGorsel { get; set; }
+
         public int KategoriID { get; set; }
         public virtual Kategori Kategori { get; set; }
         public virtual ICollection<SatisHareket> SatisHarekets { get; set; }

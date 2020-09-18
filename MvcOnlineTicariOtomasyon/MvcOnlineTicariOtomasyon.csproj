@@ -278,6 +278,7 @@
     <Content Include="Views\Departman\Create.cshtml" />
     <Content Include="Views\Departman\Edit.cshtml" />
     <Content Include="Views\Departman\Details.cshtml" />
+    <Content Include="Views\Departman\PersonelSales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
