@@ -65,19 +65,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult Details(int id)
         {
-            var departman = context.Departmans.Find(id);
+            //var departman = context.Departmans.Find(id);
 
-            //var personeller = context.Personels.Where(x => x.DepartmanID == id).ToList();
-            //var DepartmentName = context.Departmans.Where(x => x.DepartmanID == id).Select(y => y.DepartmanAd).FirstOrDefault();
-            //ViewBag.DepartmentName = DepartmentName;
+            var personeller = context.Personels.Where(x => x.DepartmanID == id).ToList();
+            var DepartmentName = context.Departmans.Where(x => x.DepartmanID == id).Select(y => y.DepartmanAd).FirstOrDefault();
+            ViewBag.DepartmentName = DepartmentName;
 
-            return View(departman);
+            return View(personeller);
         }
 
         public ActionResult PersonelSales(int id)
         {
             var satislar = context.SatisHarekets.Where(x => x.PersonelID == id).ToList();
             var personel = context.Personels.Where(x => x.PersonelID == id).Select(y => y.PersonelAd + " " + y.PersonelSoyad).FirstOrDefault();
+            ViewBag.personel = personel;
 
             return View(satislar);
         }

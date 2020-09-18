@@ -1,9 +1,14 @@
-﻿
-@model MvcOnlineTicariOtomasyon.Models.Siniflar.Departman
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Personel>
 @{
     ViewBag.Title = "Departman Detayları";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+<h1 class="mt-4">Departman Personel Listesi</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">@ViewBag.DepartmentName - Personel Listesi</li>
+</ol>
 
 <div class="row my-4">
     <div class="col-md-12">
@@ -11,7 +16,6 @@
 
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
-                @*<caption>@ViewBag.DepartmentName</caption>*@
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 5%">ID</th>
@@ -22,7 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.Personels)
+                    @foreach (var item in Model)
                     {
                         <tr>
                             <td class="text-center">@item.PersonelID</td>

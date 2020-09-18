@@ -4,22 +4,26 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<h1 class="mt-4">Personel Satışları</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">@ViewBag.personel - Personel Satışları</li>
+</ol>
 
 <div class="row my-4">
     <div class="col-md-12">
-        <a href="/Departman/Index" class="btn btn-success float-left mb-3">Personel Satışları</a>
+        <a href="/Departman/Index" class="btn btn-success float-left mb-3">Departman Listesi</a>
 
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th class="text-center" style="width: 5%">Satış ID</th>
+                        <th class="text-center" style="width: 5%">ID</th>
                         <th>Ürün</th>
                         <th>Cari</th>
                         <th>Fiyat</th>
                         <th>Adet</th>
                         <th>Toplam</th>
-                        <th>Tarih
+                        <th>Tarih</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,4 +44,3 @@
         </div>
     </div>
 </div>
-
