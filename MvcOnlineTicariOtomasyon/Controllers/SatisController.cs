@@ -97,9 +97,26 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult Edit(SatisHareket satisHareket)
         {
+            var _satisHareket = context.SatisHarekets.Find(satisHareket.SatisID);
 
+            _satisHareket.UrunID = satisHareket.UrunID;
+            _satisHareket.PersonelID = satisHareket.PersonelID;
+            _satisHareket.CariID = satisHareket.CariID;
+            _satisHareket.Adet = satisHareket.Adet;
+            _satisHareket.Fiyat = satisHareket.Fiyat;
+            _satisHareket.ToplamTutar = satisHareket.ToplamTutar;
+            _satisHareket.Tarih = satisHareket.Tarih;
+
+            context.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            var satis_detaylari = context.SatisHarekets.Where(x => x.SatisID == id).ToList();
+
+            return View(satis_detaylari);
         }
     }
 }
