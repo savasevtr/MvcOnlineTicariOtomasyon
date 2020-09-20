@@ -10,7 +10,7 @@
         <a href="/Satis/Create" class="btn btn-success float-left mb-3">Yeni Satış Yap</a>
 
         <div class="table-responsive">
-            <table class="table table-bordered table-striped" id="satislar">
+            <table class="table table-bordered table-striped" id="satislar" style="width: 100% !important;">
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 5%">ID</th>
@@ -55,7 +55,9 @@
 <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
 <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
 
 <script>
-    $('#satislar').dataTable({});
+    var table = $('#satislar').dataTable();
 </script>
