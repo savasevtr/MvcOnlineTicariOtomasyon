@@ -534,8 +534,16 @@
     <Content Include="Views\Fatura\Index.cshtml" />
     <Content Include="Views\Fatura\Create.cshtml" />
     <Content Include="Views\Fatura\Edit.cshtml" />
+    <Content Include="Views\Shared\Partials\_MainFooter.cshtml" />
+    <Content Include="Views\Shared\Partials\_MainHeader.cshtml" />
+    <Content Include="Views\Shared\Partials\_MainSidebar.cshtml" />
+    <Content Include="Views\Shared\Partials\_ControlSidebar.cshtml" />
+    <Content Include="Views\Shared\Partials\_ContentWrapper.cshtml" />
+    <Content Include="Views\Shared\Partials\_StyleSheets.cshtml" />
+    <Content Include="Views\Shared\Partials\_Scripts.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="adminlte2\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
