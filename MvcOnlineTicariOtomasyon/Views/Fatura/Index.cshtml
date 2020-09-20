@@ -1,0 +1,51 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Fatura>
+@{
+    ViewBag.Title = "Faturalar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row my-4">
+    <div class="col-md-12">
+        <a href="/Fatura/Create" class="btn btn-success float-left mb-3">Fatura Ekle</a>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 5%">ID</th>
+                        <th>Seri No</th>
+                        <th>Sıra No</th>
+                        <th>Vergi Dairesi</th>
+                        <th>Tarih</th>
+                        <th>Saat</th>
+                        <th>Toplam</th>
+                        <th>Teslim Eden</th>
+                        <th>Teslim Alan</th>
+                        <th class="text-center" style="width: 15%">İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td class="text-center">@item.FaturaID</td>
+                        <td>@item.FaturaSeriNo</td>
+                        <td>@item.FaturaSiraNo</td>
+                        <td>@item.VergiDairesi</td>
+                        <td>@item.Tarih</td>
+                        <td>@item.Saat</td>
+                        <td>@item.Toplam</td>
+                        <td>@item.TeslimEden</td>
+                        <td>@item.TeslimAlan</td>
+                        <td class="text-center">
+                            <a href="/Fatura/Details/@item.FaturaID" class="btn btn-info btn-sm">Detaylar</a>
+                            <a href="/Fatura/Edit/@item.FaturaID" class="btn btn-primary btn-sm">Düzenle</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
