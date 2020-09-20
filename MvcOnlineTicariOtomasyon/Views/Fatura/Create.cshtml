@@ -4,78 +4,87 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="row my-4">
+<div class="row">
     <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title">@ViewBag.title</h3>
 
-        <a href="/Fatura/Index" class="btn btn-success float-left mb-3">Fatura Listesi</a>
-
-        <br /><br /><br />
-
-        <form action="/Fatura/Create" method="post">
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.FaturaSeriNo)
-                        @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.FaturaSiraNo)
-                        @Html.TextBoxFor(x => x.FaturaSiraNo, new { @class = "form-control" })
-                    </div>
+                <div class="box-tools pull-right">
+                    <a href="/Fatura/Index" class="btn btn-success">Fatura Listesi</a>            
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Tarih)
-                        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+            <div class="box-body">
+                <form action="/Fatura/Create" method="post">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.FaturaSeriNo)
+                                @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.FaturaSiraNo)
+                                @Html.TextBoxFor(x => x.FaturaSiraNo, new { @class = "form-control" })
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Saat)
-                        @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Tarih)
+                                @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Saat)
+                                @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.VergiDairesi)
+                                @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.TeslimEden)
+                                @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.TeslimAlan)
+                                @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success my-2">Kaydet</button>
+                </form>
             </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.VergiDairesi)
-                        @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.TeslimEden)
-                        @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
+            <div class="box-footer"></div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.TeslimAlan)
-                        @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-success my-2">Kaydet</button>
-        </form>
-
+        </div>
     </div>
 </div>
 
