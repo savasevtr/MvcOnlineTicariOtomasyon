@@ -11,61 +11,49 @@
                 <h3 class="box-title">@ViewBag.title</h3>
 
                 <div class="box-tools pull-right">
-
+                    <a href="/Personel/Index" class="btn btn-success float-left mb-3">Personel Listesi</a>
                 </div>
             </div>
 
             <div class="box-body">
+                <form action="/Personel/Create" method="post">
 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.PersonelAd, new { @class = "mb-1" })
+                                @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.PersonelSoyad, new { @class = "mb-1" })
+                                @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.PersonelGorsel, new { @class = "mb-1" })
+                                @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Departman.DepartmanID)
+                                @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.departmanlar, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success my-2">Kaydet</button>
+                </form>
             </div>
 
             <div class="box-footer"></div>
 
         </div>
-    </div>
-</div>
-
-<div class="row my-4">
-    <div class="col-md-12">
-
-        <a href="/Personel/Index" class="btn btn-success float-left mb-3">Personel Listesi</a>
-
-        <br /><br /><br />
-
-        <form action="/Personel/Create" method="post">
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.PersonelAd, new { @class = "mb-1" })
-                        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.PersonelSoyad, new { @class = "mb-1" })
-                        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.PersonelGorsel, new { @class = "mb-1" })
-                        @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Departman.DepartmanID)
-                        @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.departmanlar, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-success my-2">Kaydet</button>
-        </form>
-
     </div>
 </div>

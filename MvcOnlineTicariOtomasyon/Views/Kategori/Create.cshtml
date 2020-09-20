@@ -11,36 +11,24 @@
                 <h3 class="box-title">@ViewBag.title</h3>
 
                 <div class="box-tools pull-right">
-
+                    <a href="/Kategori/Index" class="btn btn-success float-left mb-3">Kategori Listesi</a>
                 </div>
             </div>
 
             <div class="box-body">
+                <form action="/Kategori/Create" method="post">
 
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.KategoriAd, new { @class = "mb-1" })
+                        @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+                    </div>
+
+                    <button type="submit" class="btn btn-success my-2">Kaydet</button>
+                </form>
             </div>
 
             <div class="box-footer"></div>
 
         </div>
-    </div>
-</div>
-
-<div class="row my-4">
-    <div class="col-md-12">
-
-        <a href="/Kategori/Index" class="btn btn-success float-left mb-3">Kategori Listesi</a>
-
-        <br /><br /><br />
-
-        <form action="/Kategori/Create" method="post">
-            
-            <div class="form-group">
-                @Html.LabelFor(x => x.KategoriAd, new { @class = "mb-1" })
-                @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
-            </div>
-           
-            <button type="submit" class="btn btn-success my-2">Kaydet</button>
-        </form>
-
     </div>
 </div>

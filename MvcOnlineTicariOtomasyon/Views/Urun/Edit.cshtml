@@ -11,12 +11,77 @@
                 <h3 class="box-title">@ViewBag.title</h3>
 
                 <div class="box-tools pull-right">
-
+                    <a href="/Urun/Index" class="btn btn-success float-left mb-3">Ürün Listesi</a>
                 </div>
             </div>
 
             <div class="box-body">
+                @using (Html.BeginForm("Edit", "Urun", FormMethod.Post))
+                {
+                    @Html.HiddenFor(x => x.UrunID)
 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.UrunAd)
+                                @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Marka)
+                                @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Stok)
+                                @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.AlisFiyat)
+                                @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.SatisFiyat)
+                                @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Kategori.KategoriID)
+                                @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.kategoriler, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.UrunGorsel)
+                                @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Durum)
+                                @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success my-2">Kaydet</button>
+                }
             </div>
 
             <div class="box-footer"></div>
@@ -24,82 +89,3 @@
         </div>
     </div>
 </div>
-
-<div class="row my-4">
-    <div class="col-md-12">
-
-        <a href="/Urun/Index" class="btn btn-success float-left mb-3">Ürün Listesi</a>
-
-        <br /><br /><br />
-
-        @using (Html.BeginForm("Edit", "Urun", FormMethod.Post))
-        {
-            @Html.HiddenFor(x => x.UrunID)
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.UrunAd)
-                        @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Marka)
-                        @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Stok)
-                        @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.AlisFiyat)
-                        @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.SatisFiyat)
-                        @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Kategori.KategoriID)
-                        @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.kategoriler, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.UrunGorsel)
-                        @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Durum)
-                        @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-success my-2">Kaydet</button>
-        }
-
-    </div>
-</div>
-
-

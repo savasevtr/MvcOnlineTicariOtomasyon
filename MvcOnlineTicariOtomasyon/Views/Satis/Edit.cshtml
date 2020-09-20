@@ -11,12 +11,71 @@
                 <h3 class="box-title">@ViewBag.title</h3>
 
                 <div class="box-tools pull-right">
-
+                    <a href="/Satis/Index" class="btn btn-success float-left mb-3">Satışlar Listesi</a>
                 </div>
             </div>
 
             <div class="box-body">
+                @using (Html.BeginForm("Edit", "Satis", FormMethod.Post))
+                {
+                    @Html.HiddenFor(x => x.SatisID)
 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Urun.UrunID)
+                                @Html.DropDownListFor(x => x.UrunID, (List<SelectListItem>)ViewBag.urunler, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Cari.CariID)
+                                @Html.DropDownListFor(x => x.CariID, (List<SelectListItem>)ViewBag.cariler, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Personel.PersonelID)
+                                @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Adet)
+                                @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Fiyat)
+                                @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.ToplamTutar)
+                                @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Tarih)
+                                @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success my-2">Güncelle</button>
+                }
             </div>
 
             <div class="box-footer"></div>
@@ -24,75 +83,3 @@
         </div>
     </div>
 </div>
-
-<div class="row my-4">
-    <div class="col-md-12">
-
-        <a href="/Satis/Index" class="btn btn-success float-left mb-3">Satışlar Listesi</a>
-
-        <br /><br /><br />
-
-        @using (Html.BeginForm("Edit", "Satis", FormMethod.Post))
-        {
-            @Html.HiddenFor(x => x.SatisID)
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Urun.UrunID)
-                        @Html.DropDownListFor(x => x.UrunID, (List<SelectListItem>)ViewBag.urunler, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Cari.CariID)
-                        @Html.DropDownListFor(x => x.CariID, (List<SelectListItem>)ViewBag.cariler, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Personel.PersonelID)
-                        @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Adet)
-                        @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Fiyat)
-                        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.ToplamTutar)
-                        @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.Tarih)
-                        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-success my-2">Güncelle</button>
-        }
-
-    </div>
-</div>
-

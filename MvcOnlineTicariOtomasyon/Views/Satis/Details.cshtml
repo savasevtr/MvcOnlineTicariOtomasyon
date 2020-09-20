@@ -17,7 +17,37 @@
             </div>
 
             <div class="box-body">
-
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width: 5%">ID</th>
+                                <th>Ürün</th>
+                                <th>Cari</th>
+                                <th>Personel</th>
+                                <th>Fiyat</th>
+                                <th>Adet</th>
+                                <th>Toplam</th>
+                                <th>Tarih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-center">@item.SatisID</td>
+                                    <td>@item.Urun.UrunAd</td>
+                                    <td>@item.Cari.CariAd @item.Cari.CariSoyad</td>
+                                    <td>@item.Personel.PersonelAd @item.Personel.PersonelSoyad</td>
+                                    <td>@item.Fiyat</td>
+                                    <td>@item.Adet</td>
+                                    <td>@item.ToplamTutar</td>
+                                    <td>@item.Tarih</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="box-footer"></div>
@@ -25,42 +55,3 @@
         </div>
     </div>
 </div>
-
-<div class="row my-4">
-    <div class="col-md-12">
-        @*<a href="/Satis/Create" class="btn btn-success float-left mb-3">Yeni Satış Yap</a>*@
-
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th class="text-center" style="width: 5%">ID</th>
-                        <th>Ürün</th>
-                        <th>Cari</th>
-                        <th>Personel</th>
-                        <th>Fiyat</th>
-                        <th>Adet</th>
-                        <th>Toplam</th>
-                        <th>Tarih</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td class="text-center">@item.SatisID</td>
-                            <td>@item.Urun.UrunAd</td>
-                            <td>@item.Cari.CariAd @item.Cari.CariSoyad</td>
-                            <td>@item.Personel.PersonelAd @item.Personel.PersonelSoyad</td>
-                            <td>@item.Fiyat</td>
-                            <td>@item.Adet</td>
-                            <td>@item.ToplamTutar</td>
-                            <td>@item.Tarih</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-

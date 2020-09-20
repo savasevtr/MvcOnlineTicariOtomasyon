@@ -9,58 +9,45 @@
     <div class="col-md-12">
         <div class="box box-danger">
             <div class="box-header with-border">
-                <h3 class="box-title">@ViewBag.title</h3>
+                <h3 class="box-title">@ViewBag.DepartmentName - Personel Listesi</h3>
 
                 <div class="box-tools pull-right">
-
+                    <a href="/Departman/Index" class="btn btn-success float-left mb-3">Departman Listesi</a>
                 </div>
             </div>
 
             <div class="box-body">
-
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width: 5%">ID</th>
+                                <th>Perspnel Adı</th>
+                                <th>Personel Soyadı</th>
+                                <th>Görsel</th>
+                                <th class="text-center" style="width: 15%">İşlem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-center">@item.PersonelID</td>
+                                    <td>@item.PersonelAd</td>
+                                    <td>@item.PersonelSoyad</td>
+                                    <td>@item.PersonelGorsel</td>
+                                    <td class="text-center">
+                                        <a href="/Departman/PersonelSales/@item.PersonelID" class="btn btn-outline-dark btn-sm">Satışlar</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div class="box-footer"></div>
 
-        </div>
-    </div>
-</div>
-
-<h1 class="mt-4">Departman Personel Listesi</h1>
-<ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">@ViewBag.DepartmentName - Personel Listesi</li>
-</ol>
-
-<div class="row my-4">
-    <div class="col-md-12">
-        <a href="/Departman/Index" class="btn btn-success float-left mb-3">Departman Listesi</a>
-
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th class="text-center" style="width: 5%">ID</th>
-                        <th>Perspnel Adı</th>
-                        <th>Personel Soyadı</th>
-                        <th>Görsel</th>
-                        <th class="text-center" style="width: 15%">İşlem</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td class="text-center">@item.PersonelID</td>
-                            <td>@item.PersonelAd</td>
-                            <td>@item.PersonelSoyad</td>
-                            <td>@item.PersonelGorsel</td>
-                            <td class="text-center">
-                                <a href="/Departman/PersonelSales/@item.PersonelID" class="btn btn-outline-dark btn-sm">Satışlar</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
         </div>
     </div>
 </div>
