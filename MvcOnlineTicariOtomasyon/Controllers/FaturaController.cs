@@ -69,5 +69,30 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int id)
+        {
+            var fatura_kalemler = context.FaturaKalems.Where(x => x.FaturaID == id).ToList();
+
+            ViewBag.FaturaID = id;
+
+            return View(fatura_kalemler);
+        }
+
+        public ActionResult CreateInvoiceItem(int id)
+        {
+            ViewBag.FaturaID = id;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateInvoiceItem(FaturaKalem faturaKalem)
+        {
+            context.FaturaKalems.Add(faturaKalem);
+            context.SaveChanges();
+
+            return RedirectToAction("Details", new { id = faturaKalem.FaturaID });
+        }
     }
 }

@@ -12,7 +12,7 @@
                 <h3 class="box-title">@ViewBag.title</h3>
 
                 <div class="box-tools pull-right">
-                    <a href="/Fatura/Create" class="btn btn-success">Fatura Ekle</a>
+                    <a href="/Fatura/Create" class="btn btn-success btn-sm">Fatura Ekle</a>
                 </div>
             </div>
            
@@ -30,7 +30,7 @@
                                 <th>Toplam</th>
                                 <th>Teslim Eden</th>
                                 <th>Teslim Alan</th>
-                                <th class="text-center" style="width: 15%">İşlem</th>
+                                <th class="text-center" style="width: 25%">İşlem</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,8 +47,9 @@
                                     <td>@item.TeslimEden</td>
                                     <td>@item.TeslimAlan</td>
                                     <td class="text-center">
-                                        <a href="/Fatura/Details/@item.FaturaID" class="btn btn-info btn-sm">Detaylar</a>
-                                        <a href="/Fatura/Edit/@item.FaturaID" class="btn btn-primary btn-sm">Düzenle</a>
+                                        <a href="/Fatura/Details/@item.FaturaID" class="btn btn-info btn-xs">Detaylar</a>
+                                        <a href="/Fatura/Edit/@item.FaturaID" class="btn btn-primary btn-xs">Düzenle</a>
+                                        <a href="/Fatura/CreateInvoiceItem/@item.FaturaID" class="btn btn-danger btn-xs">Fatura Kalem Ekle</a>
                                     </td>
                                 </tr>
                             }

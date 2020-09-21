@@ -458,6 +458,8 @@
     <Content Include="Views\Shared\Partials\_ContentWrapper.cshtml" />
     <Content Include="Views\Shared\Partials\_StyleSheets.cshtml" />
     <Content Include="Views\Shared\Partials\_Scripts.cshtml" />
+    <Content Include="Views\Fatura\Details.cshtml" />
+    <Content Include="Views\Fatura\CreateInvoiceItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte2\" />
