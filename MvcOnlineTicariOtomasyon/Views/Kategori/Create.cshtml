@@ -11,7 +11,7 @@
                 <h3 class="box-title">@ViewBag.title</h3>
 
                 <div class="box-tools pull-right">
-                    <a href="/Kategori/Index" class="btn btn-success float-left mb-3">Kategori Listesi</a>
+                    <a href="/Kategori/Index" class="btn btn-success">Kategori Listesi</a>
                 </div>
             </div>
 
@@ -19,11 +19,11 @@
                 <form action="/Kategori/Create" method="post">
 
                     <div class="form-group">
-                        @Html.LabelFor(x => x.KategoriAd, new { @class = "mb-1" })
+                        @Html.LabelFor(x => x.KategoriAd)
                         @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
                     </div>
 
-                    <button type="submit" class="btn btn-success my-2">Kaydet</button>
+                    <button type="submit" class="btn btn-success">Kaydet</button>
                 </form>
             </div>
 

@@ -11,7 +11,7 @@
                 <h3 class="box-title">@ViewBag.title</h3>
 
                 <div class="box-tools pull-right">
-                    <a href="/Personel/Index" class="btn btn-success float-left mb-3">Personel Listesi</a>
+                    <a href="/Personel/Index" class="btn btn-success">Personel Listesi</a>
                 </div>
             </div>
 
@@ -23,13 +23,13 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                @Html.LabelFor(x => x.PersonelAd, new { @class = "mb-1" })
+                                @Html.LabelFor(x => x.PersonelAd)
                                 @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                @Html.LabelFor(x => x.PersonelSoyad, new { @class = "mb-1" })
+                                @Html.LabelFor(x => x.PersonelSoyad)
                                 @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                @Html.LabelFor(x => x.PersonelGorsel, new { @class = "mb-1" })
+                                @Html.LabelFor(x => x.PersonelGorsel)
                                 @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-success my-2">Güncelle</button>
+                    <button type="submit" class="btn btn-success">Güncelle</button>
                 }
             </div>
 
