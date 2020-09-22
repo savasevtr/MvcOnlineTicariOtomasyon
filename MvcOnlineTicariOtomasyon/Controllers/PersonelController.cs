@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
-using MvcOnlineTicariOtomasyon.Models.Siniflar;
+using MvcOnlineTicariOtomasyon.Models;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {

@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MvcOnlineTicariOtomasyon.Models.Siniflar.Context>
+    internal sealed class Configuration : DbMigrationsConfiguration<MvcOnlineTicariOtomasyon.Models.Context>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(MvcOnlineTicariOtomasyon.Models.Siniflar.Context context)
+        protected override void Seed(MvcOnlineTicariOtomasyon.Models.Context context)
         {
             //  This method will be called after migrating to the latest version.
 
