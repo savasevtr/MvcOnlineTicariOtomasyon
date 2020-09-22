@@ -54,8 +54,16 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var bugun_satis_sayisi = context.SatisHarekets.Count(x => x.Tarih == bugun).ToString();
             ViewBag.bugun_satis_sayisi = bugun_satis_sayisi;
 
-            var bugun_toplam_tutar = context.SatisHarekets.Where(x => x.Tarih == bugun).Sum(x => x.ToplamTutar).ToString();
+            var bugun_toplam_tutar = context.SatisHarekets.Where(x => x.Tarih == bugun).Sum(x => (decimal?)x.ToplamTutar).ToString();
             ViewBag.bugun_toplam_tutar = bugun_toplam_tutar;
+
+            var max_marka = context.Uruns.GroupBy(x => x.Marka).OrderByDescending(x => x.Count()).Select(y => y.Key).FirstOrDefault();
+            ViewBag.max_marka = max_marka;
+
+            var en_cok_satan_urun = context.Uruns.Where(u => u.UrunID == (context.SatisHarekets.GroupBy(x => x.UrunID).OrderByDescending(y => y.Count()).Select(z => z.Key).FirstOrDefault())).Select(t => t.UrunAd).FirstOrDefault();
+            ViewBag.en_cok_satan_urun = en_cok_satan_urun;
+
+
 
             return View();
         }
