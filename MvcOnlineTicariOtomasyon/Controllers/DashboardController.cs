@@ -16,15 +16,23 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View();
         }
 
-        public PartialViewResult Categories()
+        public PartialViewResult CategoryProducts()
         {
-            return PartialView();
+            var sorgu = from x in context.Uruns
+                        group x by x.Kategori.KategoriAd into g
+                        select new KategoriUrunGrup
+                        {
+                            Kategori = g.Key,
+                            Sayi = g.Count()
+                        };
+
+            return PartialView(sorgu.ToList());
         }
 
         public PartialViewResult PersonnelDepartment()
         {
             var sorgu = from x in context.Personels
-                        group x by x.DepartmanID into g
+                        group x by x.Departman.DepartmanAd into g
                         select new PersonelDepartmanGrup
                         {
                             Departman = g.Key,

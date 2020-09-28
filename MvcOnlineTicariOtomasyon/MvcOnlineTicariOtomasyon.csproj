@@ -149,6 +149,7 @@
     <Compile Include="Models\FaturaKalem.cs" />
     <Compile Include="Models\Gider.cs" />
     <Compile Include="Models\Kategori.cs" />
+    <Compile Include="Models\KategoriUrunGrup.cs" />
     <Compile Include="Models\MarkaUrunGrup.cs" />
     <Compile Include="Models\PersonelDepartmanGrup.cs" />
     <Compile Include="Models\SehirMusteriGrup.cs" />
@@ -472,7 +473,7 @@
     <Content Include="Views\Dashboard\Customers.cshtml" />
     <Content Include="Views\Dashboard\Products.cshtml" />
     <Content Include="Views\Dashboard\BrandProducts.cshtml" />
-    <Content Include="Views\Dashboard\Categories.cshtml" />
+    <Content Include="Views\Dashboard\CategoryProducts.cshtml" />
     <Content Include="Views\Dashboard\CustomerCity.cshtml" />
   </ItemGroup>
   <ItemGroup>

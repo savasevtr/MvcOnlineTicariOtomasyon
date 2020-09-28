@@ -1,34 +1,34 @@
-﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.MarkaUrunGrup>
+﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.KategoriUrunGrup>
 @{
     Layout = null;
 }
 
 <div class="box box-danger">
-    <div class="box-header">
-        <h3 class="box-title">Marka Ürün Tablosu</h3>
+    <div class="box-header with-border">
+        <h3 class="box-title">Kategoriler</h3>
     </div>
-
-    <div class="box-body no-padding">
-        <table class="table table-striped">
+    <div class="box-body">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th style="width: 10px">#</th>
-                    <th>Marka</th>
+                    <th>Kategori</th>
                     <th style="width: 150px">Ürün Sayısı</th>
                 </tr>
             </thead>
             <tbody>
                 @{ int index = 0; }
-
                 @foreach (var item in Model)
                 {
                     <tr>
                         <td>@{ index++; }@index</td>
-                        <td>@item.Marka</td>
-                        <td><span class="badge bg-yellow">@item.Sayi</span></td>
+                        <td>@item.Kategori</td>
+                        <td><span class="badge bg-green">@item.Sayi</span></td>
                     </tr>
                 }
             </tbody>
         </table>
+    </div>
+    <div class="box-footer clearfix">
     </div>
 </div>

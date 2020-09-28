@@ -5,9 +5,9 @@ using System.Web;
 
 namespace MvcOnlineTicariOtomasyon.Models
 {
-    public class PersonelDepartmanGrup
+    public class KategoriUrunGrup
     {
-        public string Departman { get; set; }
+        public string Kategori { get; set; }
         public int Sayi { get; set; }
     }
 }

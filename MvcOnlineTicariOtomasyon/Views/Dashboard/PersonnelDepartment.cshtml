@@ -12,9 +12,9 @@
         <table class="table table-striped">
             <tbody>
                 <tr>
-                    <th style="width: 10px">#</th>
+                    <th style="width: 10px;">#</th>
                     <th>Departman</th>
-                    <th style="width: 40px">Adet</th>
+                    <th style="width: 150px">Personel Sayısı</th>
                 </tr>
 
                 @{ int index = 0; }
@@ -24,7 +24,7 @@
                     <tr>
                         <td>@{ index++; }@index</td>
                         <td>@item.Departman</td>
-                        <td><span class="badge bg-red">@item.Sayi</span></td>
+                        <td><span class="badge bg-blue">@item.Sayi</span></td>
                     </tr>
                 }
             </tbody>
