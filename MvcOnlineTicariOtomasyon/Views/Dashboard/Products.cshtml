@@ -1,0 +1,45 @@
+﻿@using MvcOnlineTicariOtomasyon.Models
+@model List<Urun>
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h3 class="box-title">Ürünler</h3>
+
+                <div class="box-tools">
+                </div>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ürün Adı</th>
+                            <th>Marka</th>
+                            <th>Stok</th>
+                            <th>Alış Fiyatı</th>
+                            <th>Satış Fiyatı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.UrunID</td>
+                                <td>@item.UrunAd</td>
+                                <td>@item.Marka</td>
+                                <td>@item.Stok</td>
+                                <td>@item.AlisFiyat</td>
+                                <td>@item.SatisFiyat</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

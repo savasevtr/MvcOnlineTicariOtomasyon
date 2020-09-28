@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MvcOnlineTicariOtomasyon.Models.MarkaUrunGrup>
+@{
+    Layout = null;
+}
+
+<div class="box box-danger">
+    <div class="box-header">
+        <h3 class="box-title">Marka Ürün Tablosu</h3>
+    </div>
+
+    <div class="box-body no-padding">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Marka</th>
+                    <th style="width: 40px">Ürün Sayısı</th>
+                </tr>
+
+                @{ int index = 0; }
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@{ index++; }@index</td>
+                        <td>@item.Marka</td>
+                        <td><span class="badge bg-red">@item.Sayi</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

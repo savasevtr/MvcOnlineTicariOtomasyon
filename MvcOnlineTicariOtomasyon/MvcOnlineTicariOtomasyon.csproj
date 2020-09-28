@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CariController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -148,6 +149,9 @@
     <Compile Include="Models\FaturaKalem.cs" />
     <Compile Include="Models\Gider.cs" />
     <Compile Include="Models\Kategori.cs" />
+    <Compile Include="Models\MarkaUrunGrup.cs" />
+    <Compile Include="Models\PersonelDepartmanGrup.cs" />
+    <Compile Include="Models\SehirMusteriGrup.cs" />
     <Compile Include="Models\Personel.cs" />
     <Compile Include="Models\SatisHareket.cs" />
     <Compile Include="Models\Urun.cs" />
@@ -463,6 +467,13 @@
     <Content Include="Views\Fatura\Details.cshtml" />
     <Content Include="Views\Fatura\CreateInvoiceItem.cshtml" />
     <Content Include="Views\Istatistik\Index.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\PersonnelDepartment.cshtml" />
+    <Content Include="Views\Dashboard\Customers.cshtml" />
+    <Content Include="Views\Dashboard\Products.cshtml" />
+    <Content Include="Views\Dashboard\BrandProducts.cshtml" />
+    <Content Include="Views\Dashboard\Categories.cshtml" />
+    <Content Include="Views\Dashboard\CustomerCity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte2\" />

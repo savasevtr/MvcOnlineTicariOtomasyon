@@ -1,0 +1,43 @@
+﻿@using MvcOnlineTicariOtomasyon.Models
+@model List<Cari>
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h3 class="box-title">Cariler</h3>
+
+                <div class="box-tools">
+                </div>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cari Ad</th>
+                            <th>Cari Soyad</th>
+                            <th>Şehir</th>
+                            <th>Mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.CariID</td>
+                            <td>@item.CariAd</td>
+                            <td>@item.CariSoyad</td>
+                            <td>@item.CariSehir</td>
+                            <td><span class="label label-success">@item.CariMail</span></td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

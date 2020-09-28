@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Başlangıç";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        @Html.Action("Categories", "Dashboard")
+
+        @Html.Action("PersonnelDepartment", "Dashboard")
+    </div>
+    <div class="col-md-6">
+        @Html.Action("CustomerCity", "Dashboard")
+
+        @Html.Action("BrandProducts", "Dashboard")
+    </div>
+</div>
+
+@Html.Action("Customers", "Dashboard")
+
+@Html.Action("Products", "Dashboard")
