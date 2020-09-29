@@ -92,5 +92,19 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
             return View(personel);
         }
+
+        public ActionResult PersonnelList()
+        {
+            var personeller = context.Personels.ToList();
+
+            return View(personeller);
+        }
+
+        public ActionResult ShowProfile(int id)
+        {
+            var personel = context.Personels.Find(id);
+
+            return View(personel);
+        }
     }
 }

@@ -475,6 +475,8 @@
     <Content Include="Views\Dashboard\BrandProducts.cshtml" />
     <Content Include="Views\Dashboard\CategoryProducts.cshtml" />
     <Content Include="Views\Dashboard\CustomerCity.cshtml" />
+    <Content Include="Views\Personel\PersonnelList.cshtml" />
+    <Content Include="Views\Personel\ShowProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte2\" />

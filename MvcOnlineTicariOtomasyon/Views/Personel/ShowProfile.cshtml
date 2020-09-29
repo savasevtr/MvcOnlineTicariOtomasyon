@@ -1,0 +1,110 @@
+﻿@using MvcOnlineTicariOtomasyon.Models
+@model Personel
+@{
+    ViewBag.Title = "Personel Profili";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-3">
+
+        <div class="box box-success">
+            <div class="box-body box-profile">
+                <img class="profile-user-img img-responsive img-circle" src="@Model.PersonelGorsel" alt="@Model.PersonelAd @Model.PersonelSoyad">
+
+                <h3 class="profile-username text-center">@Model.PersonelAd @Model.PersonelSoyad</h3>
+
+                <p class="text-muted text-center">Software Engineer</p>
+
+                <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                        <b>Satışlar</b> <a class="pull-right">1,322</a>
+                    </li>
+                </ul>
+
+                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+            </div>
+        </div>
+    
+    </div>
+    
+    <div class="col-md-9">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab" aria-expanded="true">Satışlar</a></li>
+                <li class=""><a href="#tab2" data-toggle="tab" aria-expanded="false">Diğer</a></li>
+                <li class=""><a href="#tab3" data-toggle="tab" aria-expanded="false">Ayarlar</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Müşteri Ad Soyad</th>
+                                    <th>Ürün Adı</th>
+                                    <th>Adet</th>
+                                    <th>Fiyat</th>
+                                    <th>Toplam Tutar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.SatisHarekets)
+                                {
+                                    <tr>
+                                        <td>@item.SatisID</td>
+                                        <td>@item.Cari.CariAd @item.Cari.CariSoyad</td>
+                                        <td>@item.Urun.UrunAd</td>
+                                        <td>@item.Adet</td>
+                                        <td>@item.Fiyat</td>
+                                        <td>@item.ToplamTutar</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+                <div class="tab-pane" id="tab2">
+                    
+                </div>
+            
+                <div class="tab-pane" id="tab3">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputName" class="col-sm-2 control-label">Ad</label>
+
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputName" placeholder="Name" value="@Model.PersonelAd">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputName" class="col-sm-2 control-label">Soyad</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputName" placeholder="Name" value="@Model.PersonelSoyad">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            
+        </div>
+      
+    </div>
+   
+</div>
