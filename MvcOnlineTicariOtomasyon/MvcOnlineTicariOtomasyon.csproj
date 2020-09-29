@@ -157,6 +157,7 @@
     <Compile Include="Models\SatisHareket.cs" />
     <Compile Include="Models\Urun.cs" />
     <Compile Include="Models\UrunDetay.cs" />
+    <Compile Include="Models\Yapilacak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
