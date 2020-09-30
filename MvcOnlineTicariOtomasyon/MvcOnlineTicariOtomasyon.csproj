@@ -137,6 +137,7 @@
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
+    <Compile Include="Controllers\YapilacakController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -478,6 +479,7 @@
     <Content Include="Views\Dashboard\CustomerCity.cshtml" />
     <Content Include="Views\Personel\PersonnelList.cshtml" />
     <Content Include="Views\Personel\ShowProfile.cshtml" />
+    <Content Include="Views\Yapilacak\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte2\" />
