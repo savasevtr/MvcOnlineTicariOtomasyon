@@ -24,7 +24,7 @@
                                 <th class="text-center" style="width: 5%">ID</th>
                                 <th>Personel Adı</th>
                                 <th>Personel Soyadı</th>
-                                <th>Görsel</th>
+                                <th style="width: 120px;">Görsel</th>
                                 <th>Departman</th>
                                 <th class="text-center" style="width: 20%">İşlem</th>
                             </tr>
@@ -36,7 +36,9 @@
                                     <td class="text-center">@item.PersonelID</td>
                                     <td>@item.PersonelAd</td>
                                     <td>@item.PersonelSoyad</td>
-                                    <td>@item.PersonelGorsel</td>
+                                    <td class="text-center">
+                                        <img src="@item.PersonelGorsel" class="img-responsive" />
+                                    </td>
                                     <td>@item.Departman.DepartmanAd</td>
                                     <td class="text-center">
                                         <a href="/Departman/PersonelSales/@item.PersonelID" class="btn btn-info btn-sm">Satışlar</a>
