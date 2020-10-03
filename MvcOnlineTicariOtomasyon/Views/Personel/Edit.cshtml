@@ -16,7 +16,7 @@
             </div>
 
             <div class="box-body">
-                @using (Html.BeginForm("Edit", "Personel", FormMethod.Post))
+                @using (Html.BeginForm("Edit", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     @Html.HiddenFor(x => x.PersonelID)
 
@@ -39,7 +39,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(x => x.PersonelGorsel)
-                                @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+                                <input type="file" name="PersonelGorsel" class="form-control" />
                             </div>
                         </div>
                         <div class="col-md-6">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
@@ -38,6 +39,16 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult Create(Personel personel)
         {
+            if (Request.Files.Count > 0)
+            {
+                // string dosya_adi = Path.GetFileName(Request.Files[0].FileName);
+                string dosya_adi = string.Format(@"{0}", DateTime.Now.Ticks);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Images/" + dosya_adi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                personel.PersonelGorsel = "/Images/" + dosya_adi + uzanti;
+            }
+
             context.Personels.Add(personel);
             context.SaveChanges();
 
@@ -66,6 +77,28 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var _personel = context.Personels.Find(personel.PersonelID);
 
+            if (Request.Files.Count > 0)
+            {
+                string mevcut_resim = _personel.PersonelGorsel;
+
+                if (mevcut_resim != null)
+                {
+                    string mevcut_resim_yolu = Server.MapPath("~" + mevcut_resim);
+
+                    if (System.IO.File.Exists(mevcut_resim_yolu))
+                    {
+                        System.IO.File.Delete(mevcut_resim_yolu);
+                    }
+                }
+
+                // string dosya_adi = Path.GetFileName(Request.Files[0].FileName);
+                string dosya_adi = string.Format(@"{0}", DateTime.Now.Ticks);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Images/" + dosya_adi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                personel.PersonelGorsel = "/Images/" + dosya_adi + uzanti;
+            }
+
             _personel.PersonelAd = personel.PersonelAd;
             _personel.PersonelSoyad = personel.PersonelSoyad;
             _personel.PersonelGorsel = personel.PersonelGorsel;
@@ -79,6 +112,18 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Delete(int id)
         {
             var personel = context.Personels.Find(id);
+
+            string mevcut_resim = personel.PersonelGorsel;
+
+            if (mevcut_resim != null)
+            {
+                string mevcut_resim_yolu = Server.MapPath("~" + mevcut_resim);
+
+                if (System.IO.File.Exists(mevcut_resim_yolu))
+                {
+                    System.IO.File.Delete(mevcut_resim_yolu);
+                }
+            }
 
             context.Personels.Remove(personel);
             context.SaveChanges();
