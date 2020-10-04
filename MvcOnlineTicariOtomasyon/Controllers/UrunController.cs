@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
@@ -37,6 +38,15 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult Create(Urun urun)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dosya_adi = string.Format(@"{0}", DateTime.Now.Ticks);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Images/" + dosya_adi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                urun.UrunGorsel = "/Images/" + dosya_adi + uzanti;
+            }
+
             context.Uruns.Add(urun);
             context.SaveChanges();
 
@@ -65,6 +75,27 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             var _urun = context.Uruns.Find(urun.UrunID);
 
+            if (Request.Files.Count > 0)
+            {
+                string mevcut_resim = _urun.UrunGorsel;
+
+                if (mevcut_resim != null)
+                {
+                    string mevcut_resim_yolu = Server.MapPath("~" + mevcut_resim);
+
+                    if (System.IO.File.Exists(mevcut_resim_yolu))
+                    {
+                        System.IO.File.Delete(mevcut_resim_yolu);
+                    }
+                }
+
+                string dosya_adi = string.Format(@"{0}", DateTime.Now.Ticks);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Images/" + dosya_adi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                _urun.UrunGorsel = "/Images/" + dosya_adi + uzanti;
+            }
+
             _urun.UrunAd = urun.UrunAd;
             _urun.Marka = urun.Marka;
             _urun.KategoriID = urun.KategoriID;
@@ -72,7 +103,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             _urun.SatisFiyat = urun.SatisFiyat;
             _urun.Stok = urun.Stok;
             _urun.Durum = urun.Durum;
-            _urun.UrunGorsel = urun.UrunGorsel;
 
             context.SaveChanges();
 

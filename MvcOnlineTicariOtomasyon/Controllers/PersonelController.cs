@@ -41,7 +41,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         {
             if (Request.Files.Count > 0)
             {
-                // string dosya_adi = Path.GetFileName(Request.Files[0].FileName);
                 string dosya_adi = string.Format(@"{0}", DateTime.Now.Ticks);
                 string uzanti = Path.GetExtension(Request.Files[0].FileName);
                 string yol = "~/Images/" + dosya_adi + uzanti;
@@ -91,7 +90,6 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                     }
                 }
 
-                // string dosya_adi = Path.GetFileName(Request.Files[0].FileName);
                 string dosya_adi = string.Format(@"{0}", DateTime.Now.Ticks);
                 string uzanti = Path.GetExtension(Request.Files[0].FileName);
                 string yol = "~/Images/" + dosya_adi + uzanti;

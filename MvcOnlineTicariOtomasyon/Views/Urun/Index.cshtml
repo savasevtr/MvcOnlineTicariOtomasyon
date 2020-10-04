@@ -28,7 +28,7 @@
                                 <th>Stok</th>
                                 <th>Alış Fiyat</th>
                                 <th>Satış Fiyat</th>
-                                <th>Görsel</th>
+                                <th class="text-center" style="width: 120px;">Görsel</th>
                                 <th>Durum</th>
                                 <th class="text-center" style="width: 15%">İşlem</th>
                             </tr>
@@ -44,7 +44,9 @@
                                     <td>@item.Stok</td>
                                     <td>@item.AlisFiyat</td>
                                     <td>@item.SatisFiyat</td>
-                                    <td>@item.UrunGorsel</td>
+                                    <td class="text-center">
+                                        <img src="@item.UrunGorsel" alt="" class="img-responsive" />
+                                    </td>
                                     <td>@item.Durum</td>
                                     <td class="text-center">
                                         <a href="/Urun/Edit/@item.UrunID" class="btn btn-primary btn-sm">Düzenle</a>
