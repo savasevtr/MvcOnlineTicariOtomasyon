@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebGrease.Css.Ast.Selectors;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -12,9 +14,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         Context context = new Context();
 
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            var kategoriler = context.Kategoris.ToList();
+            var kategoriler = context.Kategoris.ToList().ToPagedList(sayfa, 4);
 
             return View(kategoriler);
         }

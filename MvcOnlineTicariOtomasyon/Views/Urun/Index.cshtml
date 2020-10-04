@@ -1,5 +1,7 @@
 ﻿@using MvcOnlineTicariOtomasyon.Models
-@model List<Urun>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Urun>
 @{
     ViewBag.Title = "Ürünler";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -12,7 +14,19 @@
                 <h3 class="box-title">@ViewBag.title</h3>
 
                 <div class="box-tools pull-right">
-                    <a href="/Urun/Create" class="btn btn-success btn-sm">Ürün Ekle</a>
+                    <a href="/Urun/Create" class="btn btn-success btn-sm" style="margin-left: 10px;">Ürün Ekle</a>
+                </div>
+                <div class="box-tools pull-right">
+                    @using (Html.BeginForm("Index", "Urun", FormMethod.Get))
+                    {
+                    <div class="input-group input-group-sm hidden-xs" style="width: 300px;">
+                        <input type="text" name="p" class="form-control pull-right" placeholder="Ürün Adı">
+
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    }
                 </div>
             </div>
 
@@ -42,8 +56,8 @@
                                     <td>@item.Kategori.KategoriAd</td>
                                     <td>@item.Marka</td>
                                     <td>@item.Stok</td>
-                                    <td>@item.AlisFiyat</td>
-                                    <td>@item.SatisFiyat</td>
+                                    <td>@item.AlisFiyat ₺</td>
+                                    <td>@item.SatisFiyat ₺</td>
                                     <td class="text-center">
                                         <img src="@item.UrunGorsel" alt="" class="img-responsive" />
                                     </td>
@@ -59,7 +73,9 @@
                 </div>
             </div>
 
-            <div class="box-footer"></div>
+            <div class="box-footer clearfix">
+                @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", "Urun", new { sayfa = sayfa }))
+            </div>
 
         </div>
     </div>

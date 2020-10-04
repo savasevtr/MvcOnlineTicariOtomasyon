@@ -6,6 +6,8 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicariOtomasyon.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -13,9 +15,13 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         Context context = new Context();
 
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1, string p = "")
         {
-            var urunler = context.Uruns.Where(x => x.Durum == true).ToList();
+            var urunler = context.Uruns
+                .Where(x => x.Durum == true)
+                .Where(x => x.UrunAd.Contains(p))
+                .ToList()
+                .ToPagedList(sayfa, 3);
 
             return View(urunler);
         }
