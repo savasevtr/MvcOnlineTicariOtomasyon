@@ -22,8 +22,7 @@
                         <thead>
                             <tr>
                                 <th class="text-center" style="width: 5%">ID</th>
-                                <th>Seri No</th>
-                                <th>Sıra No</th>
+                                <th>Seri Sıra No</th>
                                 <th>Vergi Dairesi</th>
                                 <th>Tarih</th>
                                 <th>Saat</th>
@@ -38,8 +37,7 @@
                             {
                                 <tr>
                                     <td class="text-center">@item.FaturaID</td>
-                                    <td>@item.FaturaSeriNo</td>
-                                    <td>@item.FaturaSiraNo</td>
+                                    <td>@item.FaturaSeriNo-@item.FaturaSiraNo</td>
                                     <td>@item.VergiDairesi</td>
                                     <td>@item.Tarih</td>
                                     <td>@item.Saat</td>
