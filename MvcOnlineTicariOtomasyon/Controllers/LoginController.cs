@@ -8,10 +8,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
         public ActionResult Index()
         {
             return View();
+        }
+
+        public PartialViewResult CariKayitPartial()
+        {
+            return PartialView();
         }
     }
 }

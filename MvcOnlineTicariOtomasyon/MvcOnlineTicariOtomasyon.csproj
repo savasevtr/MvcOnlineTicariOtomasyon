@@ -503,6 +503,7 @@
     <Content Include="weblogin\fonts\fontawesome-webfont.woff2" />
     <Content Include="weblogin\fonts\FontAwesome.otf" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\CariKayitPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte2\" />

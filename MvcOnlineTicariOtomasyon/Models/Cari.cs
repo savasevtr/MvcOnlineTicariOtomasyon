@@ -36,6 +36,11 @@ namespace MvcOnlineTicariOtomasyon.Models
         [DisplayName("Cari Mail")]
         public string CariMail { get; set; }
 
+        [Column(TypeName = "Varchar")]
+        [StringLength(20, ErrorMessage = "Şifre en fazla 20 karakter olabilir")]
+        [DisplayName("Cari Şifre")]
+        public string CariSifre { get; set; }
+
         [DisplayName("Cari Durum")]
         public bool Durum { get; set; }
 
