@@ -15,6 +15,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            var mail = (string)Session["CariMail"];
+            var cari = context.Caris.FirstOrDefault(x => x.CariMail == mail);
+            ViewBag.cari = cari;
+
             return View();
         }
     }

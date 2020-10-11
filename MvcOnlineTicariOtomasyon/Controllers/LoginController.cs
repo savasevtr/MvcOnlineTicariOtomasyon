@@ -52,7 +52,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             }
             else
             {
-                return PartialView();
+                return RedirectToAction("Index", "Login");
             }
         }
 
