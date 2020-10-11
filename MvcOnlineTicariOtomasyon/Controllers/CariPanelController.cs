@@ -12,6 +12,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         Context context = new Context();
 
+        [Authorize]
         public ActionResult Index()
         {
             return View();
