@@ -21,7 +21,7 @@
             <tr>
                 <td>@item.Urun.UrunAd</td>
                 <td>@item.Fiyat</td>
-                <td>@item.Tarih</td>
+                <td>@Convert.ToDateTime(item.Tarih).ToString("dd/MM/yyyy")</td>
             </tr>
         }
     </tbody>
