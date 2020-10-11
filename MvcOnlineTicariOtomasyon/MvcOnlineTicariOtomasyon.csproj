@@ -544,6 +544,7 @@
     <Content Include="Views\Shared\_CariLayout.cshtml" />
     <Content Include="Views\Login\CariGirisPartial.cshtml" />
     <Content Include="Views\Login\PersonelGirisPartial.cshtml" />
+    <Content Include="Views\CariPanel\Siparislerim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte2\" />
