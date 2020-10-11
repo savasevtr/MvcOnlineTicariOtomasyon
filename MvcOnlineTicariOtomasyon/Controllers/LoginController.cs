@@ -57,15 +57,27 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult PersonelGirisPartial()
+        public PartialViewResult AdminGirisPartial()
         {
             return PartialView();
         }
 
         [HttpPost]
-        public PartialViewResult PersonelGirisPartial(Personel p)
+        public ActionResult AdminGirisPartial(Admin admin)
         {
-            return PartialView();
+            var _admin = context.Admins.FirstOrDefault(x => x.KullaniciAd == admin.KullaniciAd && x.Sifre == admin.Sifre);
+            
+            if (_admin != null)
+            {
+                FormsAuthentication.SetAuthCookie(_admin.KullaniciAd, false);
+                Session["KullaniciAd"] = _admin.KullaniciAd.ToString();
+
+                return RedirectToAction("Index", "Dashboard");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
         }
     }
 }

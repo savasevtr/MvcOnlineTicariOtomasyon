@@ -15,7 +15,7 @@ namespace MvcOnlineTicariOtomasyon.Models
         public int AdminID { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(10)]
+        [StringLength(50)]
         [DisplayName("Kullanıcı Adı")]
         public string KullaniciAd { get; set; }
 

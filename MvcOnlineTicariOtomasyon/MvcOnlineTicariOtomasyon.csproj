@@ -543,7 +543,7 @@
     <Content Include="Views\CariPanel\Index.cshtml" />
     <Content Include="Views\Shared\_CariLayout.cshtml" />
     <Content Include="Views\Login\CariGirisPartial.cshtml" />
-    <Content Include="Views\Login\PersonelGirisPartial.cshtml" />
+    <Content Include="Views\Login\AdminGirisPartial.cshtml" />
     <Content Include="Views\CariPanel\Siparislerim.cshtml" />
   </ItemGroup>
   <ItemGroup>

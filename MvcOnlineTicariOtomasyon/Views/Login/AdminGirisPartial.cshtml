@@ -4,10 +4,10 @@
         <span class="fa fa-lock"></span>
         <div class="clear"></div>
         <div class="login-agileits-top">
-            @using (Html.BeginForm("CariGirisPartial", "Login", FormMethod.Post))
+            @using (Html.BeginForm("AdminGirisPartial", "Login", FormMethod.Post))
             {
-                <input type="text" class="name" name="CariMail" Placeholder="Kullanıcı Adı" required="" />
-                <input type="password" class="password" name="CariSifre" Placeholder="Şifre" required="" />
+                <input type="text" class="name" name="KullaniciAd" Placeholder="Kullanıcı Adı" required="" />
+                <input type="password" class="password" name="Sifre" Placeholder="Şifre" required="" />
                 <input type="submit" value="Giriş Yap">
             }
         </div>
