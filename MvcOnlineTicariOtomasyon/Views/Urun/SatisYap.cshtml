@@ -46,7 +46,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(x => x.Adet)
-                                @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+                                <input type="number" id="adet" name="Adet" class="form-control" onkeyup="calculateTotalPrice()" />
                             </div>
                         </div>
                     </div>
@@ -55,25 +55,25 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(x => x.Fiyat)
-                                @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+                                <input type="number" id="fiyat" name="Fiyat" value="@ViewBag.urun.SatisFiyat" class="form-control" onkeyup="calculateTotalPrice()" />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(x => x.ToplamTutar)
-                                @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+                                <input type="number" id="toplam_tutar" name="ToplamTutar" class="form-control" onkeyup="calculateTotalPrice()" />
                             </div>
                         </div>
                     </div>
 
-                    <div class="row">
+                    @*<div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(x => x.Tarih)
                                 @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
                             </div>
                         </div>
-                    </div>
+                    </div>*@
 
                     <button type="submit" class="btn btn-success">Satış Yap</button>
                 }
@@ -84,3 +84,18 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    function calculateTotalPrice() {
+        var adet = document.getElementById('adet').value;
+        var fiyat = document.getElementById('fiyat').value;
+
+        var toplam_tutar = parseInt(adet) * parseInt(fiyat);
+
+        if (!isNaN(toplam_tutar)) {
+            document.getElementById('toplam_tutar').value = toplam_tutar;
+        }
+    }
+
+</script>
