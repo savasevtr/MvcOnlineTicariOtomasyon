@@ -157,6 +157,8 @@
     <Compile Include="Models\Fatura.cs" />
     <Compile Include="Models\FaturaKalem.cs" />
     <Compile Include="Models\Gider.cs" />
+    <Compile Include="Models\KargoDetay.cs" />
+    <Compile Include="Models\KargoTakip.cs" />
     <Compile Include="Models\Kategori.cs" />
     <Compile Include="Models\KategoriUrunGrup.cs" />
     <Compile Include="Models\MarkaUrunGrup.cs" />
