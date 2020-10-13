@@ -18,7 +18,6 @@
             <div class="box-body">
                 @using (Html.BeginForm("Create", "Kargo", FormMethod.Post))
                 {
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -44,7 +43,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(x => x.TakipKodu)
-                                @Html.TextBoxFor(x => x.TakipKodu, new { @class = "form-control" })
+                                <input type="text" name="TakipKodu" value="@ViewBag.takipkodu" class="form-control" readonly />
                             </div>
                         </div>
                     </div>

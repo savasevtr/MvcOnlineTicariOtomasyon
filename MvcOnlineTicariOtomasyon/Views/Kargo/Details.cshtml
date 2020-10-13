@@ -1,0 +1,47 @@
+﻿@using MvcOnlineTicariOtomasyon.Models
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "Kargo Detayları";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title">@ViewBag.title</h3>
+
+                <div class="box-tools pull-right">
+                    <a href="/Kargo/Index" class="btn btn-success btn-sm" style="margin-left: 10px;">Kargolar</a>
+                </div>
+            </div>
+
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped" style="width: 100% !important;">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width: 5%">ID</th>
+                                <th>Açıklama</th>
+                                <th>Tarih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-center">@item.KargoTakipID</td>
+                                    <td>@item.Aciklama</td>
+                                    <td>@item.TarihZaman</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="box-footer"></div>
+
+        </div>
+    </div>
+</div>

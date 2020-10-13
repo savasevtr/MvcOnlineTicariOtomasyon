@@ -551,6 +551,7 @@
     <Content Include="Views\Urun\SatisYap.cshtml" />
     <Content Include="Views\Kargo\Index.cshtml" />
     <Content Include="Views\Kargo\Create.cshtml" />
+    <Content Include="Views\Kargo\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="adminlte2\" />
