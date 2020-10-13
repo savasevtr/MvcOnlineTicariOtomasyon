@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Karekod";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title">@ViewBag.title</h3>
+
+                <div class="box-tools pull-right">
+                    <a href="/Kategori/Index" class="btn btn-success btn-sm">Kategori Listesi</a>
+                </div>
+            </div>
+
+            <div class="box-body">
+                @using (Html.BeginForm("Index", "QR", FormMethod.Post))
+                {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="kod">Kod</label>
+                                <input type="text" name="kod" value="" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-danger btn-sm" name="QR Kod Oluştur" />
+                }
+
+                @if (ViewBag.qRCodeImage != null)
+                {
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="@ViewBag.qRCodeImage" class="img-responsive" />
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="box-footer"></div>
+
+        </div>
+    </div>
+</div>
